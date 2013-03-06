@@ -195,13 +195,14 @@ def index():
 	#	"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)"''', access_token)
 	
 	likesdata = likes['data']
-	mutuallikes = {}
+	mutuallikes = []
 	for like in likesdata:
 		#friendslikes.append(like)
 		page_id = like['id']
 		qresult = fql(
 			"select uid from page_fan where uid in ( select uid2 from friend where uid1 = me() ) and page_id = {0}".format(page_id), access_token)
-		mutuallikes[page_id] = qresult
+		dictresult = {'page_id':page_id, 'data':qresult }
+		mutuallikes.append(dictresult)
 
 	listlen = len(likesdata)
 	
