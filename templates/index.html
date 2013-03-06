@@ -51,6 +51,19 @@
         </li>{% endfor %}</ul>
       </div>
     </section>
+<section class="clearfix" id="samples">
+      <h1>likeshared</h1>
+    <div class="list">
+        <h3>Things you like</h3>
+        <ul class="things">{% for like in likes.data %}
+        <li>
+          <a href="#" onclick="window.open('http://www.facebook.com/{{like.id}}')">
+            <img src="https://graph.facebook.com/{{like.id}}/picture?type=square" alt="{{like.name}}">
+            {{like.name}}
+          </a>
+        </li>{% endfor %}</ul>
+      </div>
+    </section>
 {{listlen}}
 {{mutuallikes}}
 {% endblock%}
