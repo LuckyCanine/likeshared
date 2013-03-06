@@ -68,19 +68,13 @@
       </div>
       <div class="list inline">
         <h3>Friends Likes</h3>
-        <ul class="friendslikes">
-          {% for photo in photos.data %}
-            {% if loop.index0%4 == 0 %}
-          <li class="first-column" style="background-image: url({{photo.picture}})">
-            {% else %}
-          <li style="background-image: url({{photo.picture}})">
-            {% endif %}
-            <a href="#" onclick="window.open('http://www.facebook.com/{{photo.id}}')">
-              {{photo.name}}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
+        <ul class="things">{% for like in likes.data %}
+        <li>
+          <a href="#" onclick="window.open('http://www.facebook.com/{{like.id}}')">
+            <img src="https://graph.facebook.com/{{like.id}}/picture?type=square" alt="{{like.name}}">
+            {{like.name}}
+          </a>
+        </li>{% endfor %}</ul>
       </div>
       <div class="list">
         <h3>Things you like</h3>

@@ -177,8 +177,8 @@ def index():
                         args={'access_token': access_token, 'limit': 4})
         friends = fb_call('me/friends',
                           args={'access_token': access_token, 'limit': 4})
-        #photos = fb_call('me/photos',
-        #                args={'access_token': access_token, 'limit': 16})
+        photos = fb_call('me/photos',
+                        args={'access_token': access_token, 'limit': 16})
 	friendslikes = fb_call('me/friends',
                           args={'access_token': access_token, 'limit': 4})
 
