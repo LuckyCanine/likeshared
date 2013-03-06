@@ -50,6 +50,16 @@
           </a>
         </li>{% endfor %}</ul>
       </div>
+ 	 <div class="list">
+        <h3>Mutual Likes</h3>
+        <ul class="things">{% for like in mutuallikes %}
+        <li>
+          <a href="#" onclick="window.open('http://www.facebook.com/{{like.page_id}}')">
+            <img src="https://graph.facebook.com/{{like.id}}/picture?type=square" alt="{{like.page_name}}">
+            {{like.page_name}}
+          </a>
+        </li>{% endfor %}</ul>
+      </div>
     </section>
 {{listlen}}
 {{mutuallikes}}
