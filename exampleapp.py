@@ -185,7 +185,7 @@ def index():
                         "display=popup&app_id=%s" % (redir, FB_APP_ID))
 	
 	friendslikes = fql(
-	    "SELECT page_id FROM page_fan where uid = 516651406", access_token)
+	    "select page_id, uid from page_fan where uid in ( select uid2 from friend where uid1 = me() limit 20) limit 4", access_token)
         app_friends = fql(
             "SELECT uid, name, is_app_user, pic_square "
             "FROM user "
