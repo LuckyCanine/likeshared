@@ -177,7 +177,7 @@ def index():
                         args={'access_token': access_token, 'limit': 20})
         friends = fb_call('me/friends',
                           args={'access_token': access_token, 'limit': 20})
-     	friendslikes = fb_call('me/friends',
+     	friendslikes = fb_call('me/friends/likes',
                           args={'access_token': access_token, 'limit': 20})
 
         redir = get_home() + 'close/'

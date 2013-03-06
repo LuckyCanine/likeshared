@@ -32,11 +32,11 @@
       </div>
        <div class="list inline">
         <h3>Friends Likes</h3>
-        <ul class="things">{% for like in likes.data %}
+        <ul class="things">{% for friendslike in friendslikes.data %}
         <li>
-          <a href="#" onclick="window.open('http://www.facebook.com/{{like.id}}')">
-            <img src="https://graph.facebook.com/{{like.id}}/picture?type=square" alt="{{like.name}}">
-            {{like.name}}
+          <a href="#" onclick="window.open('http://www.facebook.com/{{friendslike.id}}')">
+            <img src="https://graph.facebook.com/{{friendslike.id}}/picture?type=square" alt="{{friendslike.name}}">
+            {{friendslike.name}}
           </a>
         </li>{% endfor %}</ul>
       </div>
