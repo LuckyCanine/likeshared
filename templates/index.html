@@ -20,7 +20,8 @@
 {% block content %}
 <section class="clearfix" id="samples">
       <h1>likeshared</h1>
-      <div class="list">
+	<!--      
+	<div class="list">
         <h3>A few of your friends</h3>
         <ul class="friends">{% for friend in friends.data %}
         <li>
@@ -50,13 +51,14 @@
           </a>
         </li>{% endfor %}</ul>
       </div>
- 	 <div class="list">
+	-->
+	 <div class="list">
         <h3>Mutual Likes</h3>
-        <ul class="things">{% for like in mutuallikes %}
+        <ul class="things">{% for mutuallike in mutuallikes %}
         <li>
-          <a href="#" onclick="window.open('http://www.facebook.com/{{like.page_id}}')">
-            <img src="https://graph.facebook.com/{{like.id}}/picture?type=square" alt="{{like.page_name}}">
-            {{like.page_name}}
+          <a href="#" onclick="window.open('http://www.facebook.com/{{mutuallike.id}}')">
+            <img src="https://graph.facebook.com/{{mutuallike.id}}/picture?type=square" alt="{{mutuallike.page_name}}">
+            {{mutuallike.page_name}}
           </a>
         </li>{% endfor %}</ul>
       </div>
