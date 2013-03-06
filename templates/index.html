@@ -33,9 +33,9 @@
 
 	<div class="list">
         <h3>Friends who like this</h3>
-        <ul>{% for mutuallike in mutuallikes %}
+        <ul class="list">{% for mutuallike in mutuallikes %}
         <li>
-	     <ul>{% for friend in mutuallike.data %}
+	     <ul class="friend">{% for friend in mutuallike.data %}
 		<li>
            	 {{friend.uid}}
 		</li>
