@@ -190,7 +190,7 @@ def index():
 	friendslikes = fql(
 		"query1":"select uid2 from friend where uid1 = me() limit 2",
 		"query2":"select page_id from page_fan where uid = me()",
-		"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)", , access_token)
+		"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)", access_token)
 
         app_friends = fql(
             "SELECT uid, name, is_app_user, pic_square "
