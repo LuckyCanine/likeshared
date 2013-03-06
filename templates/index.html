@@ -60,7 +60,8 @@
             <img src="https://graph.facebook.com/{{mutuallike.page_id}}/picture?type=square" alt="{{mutuallike.page_name}}">
             {{mutuallike.page_name}}
           </a>
-		<div class="list inline">
+	  {{mutuallike.data}}
+<!--		<div class="list inline">
 		<h3>Friends</h3>
 		<ul class="friends">{% for friend in mutuallike.data %}
 		<li>
@@ -69,6 +70,7 @@
 		  </a>
 		</li>{% endfor %}</ul>
 		</div>
+-->
         </li>{% endfor %}</ul>
       </div>
     </section>
