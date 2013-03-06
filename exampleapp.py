@@ -174,7 +174,7 @@ def index():
         me = fb_call('me', args={'access_token': access_token})
         fb_app = fb_call(FB_APP_ID, args={'access_token': access_token})
         likes = fb_call('me/likes',
-                        args={'access_token': access_token, 'limit': 20})
+                        args={'access_token': access_token, 'limit': 2})
         friends = fb_call('me/friends',
                           args={'access_token': access_token, 'limit': 20})
      	
@@ -195,11 +195,11 @@ def index():
 	#	"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)"''', access_token)
 	
 	likesdata = likes['data']
-	#for like in likes['data']:
-	#	friendslikes.append(like)
+	for like in likesdata:
+		friendslikes.append(like)
 	
 	listlen = len(likesdata)
-	friendslikes=likesdata
+	
 
         app_friends = fql(
             "SELECT uid, name, is_app_user, pic_square "
