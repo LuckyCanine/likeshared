@@ -179,18 +179,18 @@ def index():
                           args={'access_token': access_token, 'limit': 20})
      	#friendslikes = fb_call('me/likes',
                           #args={'access_token': access_token, 'limit': 20})
-
+	
         redir = get_home() + 'close/'
         POST_TO_WALL = ("https://www.facebook.com/dialog/feed?redirect_uri=%s&"
                         "display=popup&app_id=%s" % (redir, FB_APP_ID))
 	
-	friendslikes = fql(
-	   "select page_id, uid from page_fan where uid in ( select uid2 from friend where uid1 = me() ) and page_id in (select page_id from page_fan where uid = me())", access_token)
-
 	#friendslikes = fql(
-	#	"query1":"select uid2 from friend where uid1 = me() limit 2",
-	#	"query2":"select page_id from page_fan where uid = me()",
-	#	"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)", access_token)
+	#   "select page_id, uid from page_fan where uid in ( select uid2 from friend where uid1 = me() ) and page_id in (select page_id from page_fan where uid = me())", access_token)
+
+	friendslikes = fql(
+		'''"query1":"select uid2 from friend where uid1 = me() limit 5",'
+		"query2":"select page_id from page_fan where uid = me()",
+		"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)"''', access_token)
 
         app_friends = fql(
             "SELECT uid, name, is_app_user, pic_square "
