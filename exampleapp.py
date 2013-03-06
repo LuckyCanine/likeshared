@@ -178,7 +178,7 @@ def index():
         friends = fb_call('me/friends',
                           args={'access_token': access_token, 'limit': 20})
      	friendslikes = fb_call('me/friends',
-                          args={'access_token': access_token, 'limit': 4})
+                          args={'access_token': access_token, 'limit': 20})
 
         redir = get_home() + 'close/'
         POST_TO_WALL = ("https://www.facebook.com/dialog/feed?redirect_uri=%s&"
