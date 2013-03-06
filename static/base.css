@@ -349,7 +349,7 @@ header .tagline {
   content: ".";
   display: block;
   font-size: 0;
-  height: 0;
+  height: auto;
   line-height: 0;
   visibility: hidden;
 }
