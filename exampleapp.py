@@ -183,7 +183,12 @@ def index():
         redir = get_home() + 'close/'
         POST_TO_WALL = ("https://www.facebook.com/dialog/feed?redirect_uri=%s&"
                         "display=popup&app_id=%s" % (redir, FB_APP_ID))
-
+	
+	#friendslikes = fql(
+	#    "SELECT uid, name, is_app_user, pic_square "
+        #    "FROM user "
+         #   "WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) AND "
+         #   "  is_app_user = 1", access_token)
         app_friends = fql(
             "SELECT uid, name, is_app_user, pic_square "
             "FROM user "
