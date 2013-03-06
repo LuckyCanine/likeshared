@@ -56,8 +56,8 @@
         <h3>Mutual Likes</h3>
         <ul class="things">{% for mutuallike in mutuallikes %}
         <li>
-          <a href="#" onclick="window.open('http://www.facebook.com/{{mutuallike.id}}')">
-            <img src="https://graph.facebook.com/{{mutuallike.id}}/picture?type=square" alt="{{mutuallike.page_name}}">
+          <a href="#" onclick="window.open('http://www.facebook.com/{{mutuallike.page_id}}')">
+            <img src="https://graph.facebook.com/{{mutuallike.page_id}}/picture?type=square" alt="{{mutuallike.page_name}}">
             {{mutuallike.page_name}}
           </a>
         </li>{% endfor %}</ul>
