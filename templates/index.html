@@ -13,33 +13,13 @@
       This is your app
       <a href="{{app.link}}">{{app.name}}</a>
     </p>
-    <div id="share-app">
-      <p>Share your app:</p>
-      <ul>
-        <li>
-          <a href="#" class="facebook-button" id="postToWall" data-url="{{ url }}">
-            <span class="plus">Post to Wall</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="facebook-button speech-bubble" id="sendToFriends" data-url="{{ url }}">
-            <span class="speech-bubble">Send Message</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
-            <span class="apprequests">Send Requests</span>
-          </a>
-        </li>
-      </ul>
-    </div>
   </div>
 
 {% endblock %}
 
 {% block content %}
 <section class="clearfix" id="samples">
-      <h1>Examples of the Facebook Graph API</h1>
+      <h1>likeshared</h1>
       <div class="list">
         <h3>A few of your friends</h3>
         <ul class="friends">{% for friend in friends.data %}
