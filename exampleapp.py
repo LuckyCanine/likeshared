@@ -195,6 +195,7 @@ def index():
 	#	"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)"''', access_token)
 	
 	likesdata = likes['data']
+	friendslikes = {}
 	for like in likesdata:
 		friendslikes.append(like)
 	
