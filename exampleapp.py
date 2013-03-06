@@ -199,8 +199,9 @@ def index():
 	for like in likesdata:
 		#friendslikes.append(like)
 		page_id = like['id']
-		#qresult = select page_id, uid from page_fan where uid in ( select uid2 from friend where uid1 = me() ) and page_id = #like.pageid.....
-		mutuallikes.append(page_id)
+		qresult = fql(
+			"select page_id, uid from page_fan where uid in ( select uid2 from friend where uid1 = me() ) and page_id = #pageid", access_token)
+		mutuallikes.append(qresult)
 
 	listlen = len(likesdata)
 	
