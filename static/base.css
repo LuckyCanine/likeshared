@@ -319,6 +319,7 @@ header .tagline {
   margin-left: 12px;
   overflow: hidden;
   padding: 0;
+  height: 32px;
   width: 32px;
   background-position: center 25%;
   background-repeat: no-repeat;

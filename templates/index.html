@@ -36,7 +36,7 @@
         <ul class="list">{% for mutuallike in mutuallikes %}
         <li>
 	     <ul class="list inline">{% for friend in mutuallike.data %}
-		<li class="friends">
+		<li>
 		<a href="#" onclick="window.open('http://www.facebook.com/{{friend.uid}}')">
             	<img src="https://graph.facebook.com/{{friend.uid}}/picture?type=square"">
 	            </a>
