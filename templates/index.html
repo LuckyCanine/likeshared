@@ -60,14 +60,15 @@
             <img src="https://graph.facebook.com/{{mutuallike.page_id}}/picture?type=square" alt="{{mutuallike.page_name}}">
             {{mutuallike.page_name}}
           </a>
-	 {% for friend in mutuallike.data %}
-	<li>
+	<ul> {% for friend in mutuallike.data %}
+	
+	 <li>
 <!--	  <a href="#" onclick="window.open('http://www.facebook.com/{{friend.uid}}')">
 	    <img src="https://graph.facebook.com/{{friend.uid}}/picture?type=square">		    
 	  </a>
 -->
-	{{{friend}}}
-	</li>{% endfor %}
+	{{friend}}
+	</li>{% endfor %}</ul>
 	
         </li>{% endfor %}</ul>
       </div>
