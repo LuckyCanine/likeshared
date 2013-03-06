@@ -182,8 +182,8 @@ def index():
         POST_TO_WALL = ("https://www.facebook.com/dialog/feed?redirect_uri=%s&"
                         "display=popup&app_id=%s" % (redir, FB_APP_ID))
 	
-	#friendslikes = fb_call('me/likes',
-        #                 args={'access_token': access_token, 'limit': 20})
+	friendslikes = fb_call('me/likes',
+                         args={'access_token': access_token, 'limit': 20})
 	
 
 	#friendslikes = fql(
@@ -195,10 +195,13 @@ def index():
 	#	"query3":"select page_id, uid from page_fan where uid in (select uid2 from #query1) and page_id in (select page_id from #query2)"''', access_token)
 	
 	likesdata = likes['data']
-	friendslikes = []
+	mutuallikes = []
 	for like in likesdata:
-		friendslikes.append(like)
-	
+		#friendslikes.append(like)
+		page_id = like['id']
+		#qresult = select page_id, uid from page_fan where uid in ( select uid2 from friend where uid1 = me() ) and page_id = #like.pageid.....
+		mutuallikes.append(page_id)
+
 	listlen = len(likesdata)
 	
 
@@ -216,7 +219,7 @@ def index():
 
         return render_template(
             'index.html', app_id=FB_APP_ID, token=access_token, likes=likes,
-            friends=friends, friendslikes=friendslikes, listlen=listlen, app_friends=app_friends, app=fb_app,
+            friends=friends, friendslikes=friendslikes, mutuallikes=mutuallikes, listlen=listlen, app_friends=app_friends, app=fb_app,
             me=me, POST_TO_WALL=POST_TO_WALL, SEND_TO=SEND_TO, url=url,
             channel_url=channel_url, name=FB_APP_NAME)
     else:
