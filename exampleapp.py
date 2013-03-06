@@ -199,7 +199,7 @@ def index():
 	#	friendslikes.append(like)
 	
 	listlen = len(likesdata)
-	friendslikes=likedata
+	friendslikes=likesdata
 
         app_friends = fql(
             "SELECT uid, name, is_app_user, pic_square "
