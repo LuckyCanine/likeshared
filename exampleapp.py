@@ -182,8 +182,8 @@ def index():
         POST_TO_WALL = ("https://www.facebook.com/dialog/feed?redirect_uri=%s&"
                         "display=popup&app_id=%s" % (redir, FB_APP_ID))
 	
-	friendslikes = fb_call('me/likes',
-                          args={'access_token': access_token, 'limit': 20})
+	#friendslikes = fb_call('me/likes',
+        #                 args={'access_token': access_token, 'limit': 20})
 	
 
 	#friendslikes = fql(
@@ -199,6 +199,8 @@ def index():
 	#	friendslikes.append(like)
 	
 	listlen = len(likesdata)
+	friendslikes=likedata
+
         app_friends = fql(
             "SELECT uid, name, is_app_user, pic_square "
             "FROM user "
