@@ -201,7 +201,7 @@ def index():
 		page_id = like['id']
 		qresult = fql(
 			"select uid from page_fan where uid in ( select uid2 from friend where uid1 = me() ) and page_id = {0}".format(page_id), access_token)
-		mutuallikes{page_id} = qresult
+		mutuallikes[page_id] = qresult
 
 	listlen = len(likesdata)
 	
